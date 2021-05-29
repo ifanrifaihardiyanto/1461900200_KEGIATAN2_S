@@ -104,11 +104,11 @@
                 <div class="container mt-n10">
                     <div class="card mb-4">
                         <div class="card-header">
-                            <h4>Select</h4>
+                            <h4>Select Like</h4>
                         </div>
                         <div class="card-body">
                             <div class="source-data">
-                                <span class="source red">*Select table siswa</span>
+                                <span class="source red">*Select table siswa dengan nama like 'DIMAS%'</span>
                             </div>
                             <br>
                             <div class="table-responsive">
@@ -122,7 +122,7 @@
                                     </thead>
                                     <tbody>
                                         <?php $no=1 ?>
-                                        @foreach ($selectsiswa as $siswa)
+                                        @foreach ($selectlikesiswa as $siswa)
                                         <tr>
                                             <td>{{ $no++ }}</td>
                                             <td>{{ $siswa->nis }}</td>
@@ -133,6 +133,35 @@
                                 </table>
                             </div>
                         </div>
+
+                        <div class="card-body">
+                            <div class="source-data">
+                                <span class="source red">*Select table siswa dengan nama like 'SITI%'</span>
+                            </div>
+                            <br>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>NIS</th>
+                                            <th>Nama</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php $no=1 ?>
+                                        @foreach ($selectlikesiswa2 as $siswa)
+                                        <tr>
+                                            <td>{{ $no++ }}</td>
+                                            <td>{{ $siswa->nis }}</td>
+                                            <td>{{ $siswa->nama }}</td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </main>
