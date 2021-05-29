@@ -51,8 +51,21 @@ class SelectController extends Controller
                 $join->on('semester.id_semester', '=', 'dtlsiswa.id_semester');
             })->orderBy('nis', 'asc')->get();
 
-        // print("<pre>" . print_r($selectJoin, true) . "</pre>");
         return view('selectjoin0200', ['selectjoin' => $selectJoin]);
+    }
+
+    public function selectjoinwithWhere()
+    {
+        $dataSiswa = DB::table('siswa')
+            ->leftjoin('kelas', 'siswa.id_kelas', '=', 'kelas.id_kelas')
+            ->where([
+                ['kelas.kelas', '=', 'XII'],
+                ['siswa.nama', 'like', '%E%']
+            ])
+            ->orderBy('nis', 'asc')
+            ->get();
+
+        return view('selectjoinwithwhere0200', ['dataSiswa' => $dataSiswa]);
     }
 
     /**

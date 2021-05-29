@@ -81,7 +81,7 @@
                                 <a class="nav-link" href="{{'/selectjoin'}}">
                                     Select join
                                 </a>
-                                <a class="nav-link" href="selectjoinwithwhere.html">
+                                <a class="nav-link" href="{{'/selectjoinwithwhere'}}">
                                     Select join dengan where
                                 </a>
                             </nav>
