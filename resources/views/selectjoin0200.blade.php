@@ -104,11 +104,11 @@
                 <div class="container mt-n10">
                     <div class="card mb-4">
                         <div class="card-header">
-                            <h4>Select</h4>
+                            <h4>Select with Join Table</h4>
                         </div>
                         <div class="card-body">
                             <div class="source-data">
-                                <span class="source red">*Select table siswa</span>
+                                <span class="source red">*Select table dan menggabungkan (join) table lain</span>
                             </div>
                             <br>
                             <div class="table-responsive">
@@ -118,15 +118,23 @@
                                             <th>No</th>
                                             <th>NIS</th>
                                             <th>Nama</th>
+                                            <th>Kelas</th>
+                                            <th>Tanggal</th>
+                                            <th>Absen</th>
+                                            <th>Semester</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php $no=1 ?>
-                                        @foreach ($selectsiswa as $siswa)
+                                        @foreach ($selectjoin as $join)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td>{{ $siswa->nis }}</td>
-                                            <td>{{ $siswa->nama }}</td>
+                                            <td>{{ $join->nis }}</td>
+                                            <td>{{ $join->nama }}</td>
+                                            <td>{{ $join->kelas }}</td>
+                                            <td>{{ $join->tanggal }}</td>
+                                            <td>{{ $join->absen }}</td>
+                                            <td>{{ $join->status }}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>
